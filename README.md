@@ -189,6 +189,7 @@ The game ends when:<br>
 
 
 # 7. **Author & Acknowledgment**  
+<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/2dac57c9-68e3-4642-8057-adcb4da1909d" />
 
 ## 👤 Author
 
