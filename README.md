@@ -196,7 +196,8 @@ The game ends when:<br>
 **Dhanreigh I. Atienza**  
 - 🌐 GitHub: Dadanchii https://github.com/Dadanchii  
   
-**Mark John Lloyd L. Ncinas**  
+**Mark John Lloyd L. Ncinas** 
+<img width="150" height="150 alt="image" src="https://github.com/user-attachments/assets/c63e2053-b6b1-44b3-ad7e-d846224d76e8" />
 - 🌐 GitHub: loyditech https://github.com/loyditech
   
 **Dave Rowan V. Paunil**  
