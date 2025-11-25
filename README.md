@@ -191,9 +191,7 @@ The game ends when:<br>
 # 7. **Author & Acknowledgment**  
 
 
-<table> <tr> <th style="text-align:center">Photo</th> <th style="text-align:center">Name</th> <th style="text-align:center">GitHub</th> </tr> <tr> <td style="text-align:center"><img src="Profile/danr.jpg" width="80" style="border-radius: 50%;"/></td> <td style="text-align:center"><strong>Dhanreigh I. Atienza</strong></td> <td style="text-align:center"> <a href="https://github.com/Dadanchii">🌐 Dadanchii</a> </td> </tr> <tr> <td style="text-align:center"><img src="Profile/mark.jpg" width="80" style="border-radius: 50%;"/></td> <td style="text-align:center"><strong>Mark John Lloyd L. Ncinas</strong></td> <td style="text-align:center"> <a href="https://github.com/loyditech">🌐 loyditech</a> </td> </tr> <tr> <td style="text-align:center"><img src="Profile/dave.jpg" width="80" style="border-radius: 50%;"/></td> <td style="text-align:center"><strong>Dave Rowan V. Paunil</strong></td> <td style="text-align:center"> <a href="https://github.com/dp30-sub">🌐 dp30-sub</a> </td> </tr> </table>
-
-
+<div align="center" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;"><div style="text-align: center;"> <img src="Profile/danr.jpg" width="80" style="border-radius: 50%;"/> <br> <strong>Dhanreigh I. Atienza</strong> <br> <a href="https://github.com/Dadanchii">@Dadancchii</a> </div><div style="text-align: center;"> <img src="Profile/mark.jpg" width="80" style="border-radius: 50%;"/> <br> <strong>Mark John Lloyd L. Ncinas</strong> <br> <a href="https://github.com/loyditech">@loyditech</a> </div><div style="text-align: center;"> <img src="Profile/dave.jpg" width="80" style="border-radius: 50%;"/> <br> <strong>Dave Rowan V. Paunil</strong> <br> <a href="https://github.com/dp30-sub">@dp30-sub</a> </div></div>
 
 ## 🙏 Acknowledgements
 
