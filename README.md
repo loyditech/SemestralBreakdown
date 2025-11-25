@@ -195,10 +195,6 @@ The game ends when:<br>
 
 
 
-💼 Role:
-
-📧 Email: 
-
 ## 🙏 Acknowledgements
 
 We would like to express our gratitude to the following:
