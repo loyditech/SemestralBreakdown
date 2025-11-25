@@ -191,25 +191,9 @@ The game ends when:<br>
 # 7. **Author & Acknowledgment**  
 
 
-Dhanreigh I. Atienza
-<img src="Profile/danr.jpg" width="120" style="border-radius: 50%;"/>
-🌐 GitHub: Dadancchii
+<table> <tr> <th style="text-align:center">Photo</th> <th style="text-align:center">Name</th> <th style="text-align:center">GitHub</th> </tr> <tr> <td style="text-align:center"><img src="Profile/danr.jpg" width="80" style="border-radius: 50%;"/></td> <td style="text-align:center"><strong>Dhanreigh I. Atienza</strong></td> <td style="text-align:center"> <a href="https://github.com/Dadanchii">🌐 Dadanchii</a> </td> </tr> <tr> <td style="text-align:center"><img src="Profile/mark.jpg" width="80" style="border-radius: 50%;"/></td> <td style="text-align:center"><strong>Mark John Lloyd L. Ncinas</strong></td> <td style="text-align:center"> <a href="https://github.com/loyditech">🌐 loyditech</a> </td> </tr> <tr> <td style="text-align:center"><img src="Profile/dave.jpg" width="80" style="border-radius: 50%;"/></td> <td style="text-align:center"><strong>Dave Rowan V. Paunil</strong></td> <td style="text-align:center"> <a href="https://github.com/dp30-sub">🌐 dp30-sub</a> </td> </tr> </table>
 
-💼 Role: 
 
-📧 Email: 
-
-Mark John Lloyd L. Ncinas
-<img src="Profile/mark.jpg" width="120" style="border-radius: 50%;"/>
-🌐 GitHub: loyditech
-
-💼 Role: 
-
-📧 Email:
-
-Dave Rowan V. Paunil
-<img src="Profile/dave.jpg" width="120" style="border-radius: 50%;"/>
-🌐 GitHub: dp30-sub
 
 💼 Role:
 
