@@ -189,7 +189,7 @@ The game ends when:<br>
 
 
 # 7. **Author & Acknowledgment**  
-<img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/2dac57c9-68e3-4642-8057-adcb4da1909d" />
+
 
 ## 👤 Author
 
@@ -200,7 +200,8 @@ The game ends when:<br>
 <img width="150" height="150 alt="image" src="https://github.com/user-attachments/assets/c63e2053-b6b1-44b3-ad7e-d846224d76e8" />
 - 🌐 GitHub: loyditech https://github.com/loyditech
   
-**Dave Rowan V. Paunil**  
+**Dave Rowan V. Paunil** 
+<img src="Profile/dave.jpg" width="80"/>
 - 🌐 GitHub: dp30-sub https://github.com/dp30-sub  
 
 ## 🙏 Acknowledgements
