@@ -190,8 +190,11 @@ The game ends when:<br>
 
 # 7. **Author & Acknowledgment**  
 
-
-<div align="center" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;"><div style="text-align: center;"> <img src="Profile/danr.jpg" width="80" style="border-radius: 50%;"/> <br> <strong>Dhanreigh I. Atienza</strong> <br> <a href="https://github.com/Dadanchii">@Dadanchii</a> </div><div style="text-align: center;"> <img src="Profile/mark.jpg" width="80" style="border-radius: 50%;"/> <br> <strong>Mark John Lloyd L. Ncinas</strong> <br> <a href="https://github.com/loyditech">@loyditech</a> </div><div style="text-align: center;"> <img src="Profile/dave.jpg" width="80" style="border-radius: 50%;"/> <br> <strong>Dave Rowan V. Paunil</strong> <br> <a href="https://github.com/dp30-sub">@dp30-sub</a> </div></div>
+| Profile | Name | Role |
+|:---:|:---:|:---:|
+| <img src="Profile/danr.jpg" width="80" style="border-radius: 50%;"/><br>[@Dadanchii](https://github.com/Dadanchii) | **Dhanreigh I. Atienza** | */Role |
+| <img src="Profile/mark.jpg" width="80" style="border-radius: 50%;"/><br>[@loyditech](https://github.com/loyditech) | **Mark John Lloyd L. Ncinas** | */Role |
+| <img src="Profile/dave.jpg" width="80" style="border-radius: 50%;"/><br>[@dp30-sub](https://github.com/dp30-sub) | **Dave Rowan V. Paunil** | */Role |
 
 ## 🙏 Acknowledgements
 
