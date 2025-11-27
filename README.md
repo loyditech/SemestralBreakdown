@@ -207,12 +207,13 @@ Press Enter to start...
 
 
 ## Selecting Study (1)
-
+```
 ----- Day 1/30 -----
 Money: $300 | Energy: 100 | Stress: 0 | Grade: 70%
 Weekly:| Study 0/4 | Work 0/3 | Rest 0/3 | Hangout 0/3 | 
 DANGER: Grade is low! Study more!
-
+```
+```
 DAILY ACTIONS:
 1. Study   (+2% grade, +12 stress, -12 energy, -$50)
 2. Work    (+$200, +15 stress, -1% grade, -15 energy)
@@ -222,9 +223,10 @@ Choose: 1
 Studying...
 Well-rested! Stress naturally decreases.
 Press Enter to continue...
-
+```
 
 ## Selecting Work (2)
+
 ----- Day 2/30 -----
 Money: $250 | Energy: 88 | Stress: 9 | Grade: 72%
 Weekly:| Study 1/4 | Work 0/3 | Rest 0/3 | Hangout 0/3 |
