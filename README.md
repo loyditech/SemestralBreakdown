@@ -226,7 +226,7 @@ Press Enter to continue...
 ```
 
 ## Selecting Work (2)
-
+```
 ----- Day 2/30 -----
 Money: $250 | Energy: 88 | Stress: 9 | Grade: 72%
 Weekly:| Study 1/4 | Work 0/3 | Rest 0/3 | Hangout 0/3 |
@@ -240,8 +240,11 @@ DAILY ACTIONS:
 Choose: 2
 Working...
 Press Enter to continue...
+```
+
 
 ## Selecting Rest (3)
+```
 ----- Day 3/30 -----
 Money: $450 | Energy: 73 | Stress: 24 | Grade: 71%
 Weekly:| Study 1/4 | Work 1/3 | Rest 0/3 | Hangout 0/3 |
@@ -256,9 +259,11 @@ Choose: 3
 Resting...
 Well-rested! Stress naturally decreases.
 Press Enter to continue...
+```
 
 
 ## Selecting Hang Out (4)
+```
 ----- Day 4/30 -----
 Money: $480 | Energy: 88 | Stress: 16 | Grade: 71%
 Weekly:| Study 1/4 | Work 1/3 | Rest 1/3 | Hangout 0/3 |
@@ -272,9 +277,10 @@ DAILY ACTIONS:
 Choose: 4
 Hanging out...
 Press Enter to continue...
-
+```
 
 ----- Day 5/30 -----
+```
 Money: $400 | Energy: 83 | Stress: 6 | Grade: 71%
 Weekly:| Study 1/4 | Work 1/3 | Rest 1/3 | Hangout 1/3 |
 DANGER: Grade is low! Study more!
@@ -285,7 +291,7 @@ DAILY ACTIONS:
 3. Rest    (+ 15 energy, -5 stress , -$30)
 4. Hang Out (-$80, -5 energy, -10 stress)
 Choose:
-
+```
 
 
 
