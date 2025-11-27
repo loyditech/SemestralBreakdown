@@ -193,8 +193,8 @@ The game ends when:<br>
 | Profile | Name | Role |
 |:---:|:---:|:---:|
 | <img src="Profile/danr.jpg" width="80" style="border-radius: 50%;"/><br>[@Dadanchii](https://github.com/Dadanchii) | **Dhanreigh I. Atienza** | Developer<br>Tester<br>ReadMe Creator |
-| <img src="Profile/mark.jpg" width="80" style="border-radius: 50%;"/><br>[@loyditech](https://github.com/loyditech) | **Mark John Lloyd L. Ncinas** | */Role |
-| <img src="Profile/dave.jpg" width="80" style="border-radius: 50%;"/><br>[@dp30-sub](https://github.com/dp30-sub) | **Dave Rowan V. Paunil** | */Role |
+| <img src="Profile/mark.jpg" width="80" style="border-radius: 50%;"/><br>[@loyditech](https://github.com/loyditech) | **Mark John Lloyd L. Ncinas** | Main Developer<br>Debugger<br>ReadMe Creator |
+| <img src="Profile/dave.jpg" width="80" style="border-radius: 50%;"/><br>[@dp30-sub](https://github.com/dp30-sub) | **Dave Rowan V. Paunil** | Developer<br>Tester<br>ReadMe Creator |
 
 ## 🙏 Acknowledgements
 
