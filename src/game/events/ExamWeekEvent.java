@@ -2,6 +2,9 @@ package game.events;
 
 import game.Player;
 
+/**
+ * Exam Week Event - Player's performance depends on their energy level
+ */
 public class ExamWeekEvent extends Event {
     @Override
     public String getName() {
@@ -10,7 +13,6 @@ public class ExamWeekEvent extends Event {
        "- When Energy is below 60%, Grade Penalty (-5)\n" +
        "(Caution) In all cases, Energy decreases by 10.";
     }
-
 
     @Override
     public void apply(Player player) {
