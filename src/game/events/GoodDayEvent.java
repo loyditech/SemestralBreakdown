@@ -2,6 +2,9 @@ package game.events;
 
 import game.Player;
 
+/**
+ * Good Day Event - Player gets bonus money and reduced stress
+ */
 public class GoodDayEvent extends Event {
     @Override
     public String getName() {
