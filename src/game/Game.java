@@ -4,39 +4,61 @@ import game.events.*;
 import java.util.Random;
 import java.util.Scanner; 
 
+
 public class Game {
+    // Constants
     private static final int TOTAL_DAYS = 30;
-    private final Player player = new Player(300, 100, 0, 70); // Start at 70% (close but manageable)
+    
+    // Game components
+    private final Player player = new Player(300, 100, 0, 70);
     private final Random rng = new Random();
-    private final Scanner scanner = new Scanner(System.in);
+    
+    // Event pool for random events
     private final Event[] eventPool = {
         new ExamWeekEvent(), new AllowanceDelayEvent(), new PowerOutageEvent(),
         new RainyDayEvent(), new GoodDayEvent()
     };
+    
     private int day = 1;
 
-    @SuppressWarnings("ConvertToTryWithResources")
+    /**
+     * Main game loop - starts and controls the game flow
+     */
     public void start() {
-        showWelcome();
-        while (day <= TOTAL_DAYS && !isGameOver()) {
-            System.out.printf("\n----- Day %d/%d -----\n", day, TOTAL_DAYS);
-            printStats();
-            if (day % 7 == 1 && day > 1) player.resetWeeklyCounters();
-            triggerRandomEvent();
-            handlePlayerAction();
-            applyDailyEffects();
-            clampStats();
-            day++;
-            if (day <= TOTAL_DAYS && !isGameOver()) {
-                System.out.print("Press Enter to continue...");
-                scanner.nextLine();
+        // Use try-with-resources for automatic scanner management
+        try (Scanner scanner = new Scanner(System.in)) {
+            showWelcome(scanner);
+            
+            // Main game loop - runs for TOTAL_DAYS or until game over
+            while (day <= TOTAL_DAYS && !isGameOver()) {
+                System.out.printf("\n----- Day %d/%d -----\n", day, TOTAL_DAYS);
+                printStats();
+                
+                // Reset weekly counters every Monday (day 1, 8, 15, etc.)
+                if (day % 7 == 1 && day > 1) player.resetWeeklyCounters();
+                
+                triggerRandomEvent();
+                handlePlayerAction(scanner);
+                applyDailyEffects();
+                clampStats();
+                day++;
+                
+                // Pause between days if game continues
+                if (day <= TOTAL_DAYS && !isGameOver()) {
+                    System.out.print("Press Enter to continue...");
+                    scanner.nextLine();
+                }
             }
+            showGameResult();
+            // Scanner automatically closed here by try-with-resources
         }
-        showGameResult();
-        scanner.close();
     }
-
-    private void showWelcome() {
+    
+    /**
+     * Displays welcome message and game instructions
+     */
+    private void showWelcome(Scanner scanner) {
+        // ASCII art title
         System.out.println("░█▀▀░█▀▀░█▄█░█▀▀░█▀▀░▀█▀░█▀▄░█▀█░█░░░░░█▀▄░█▀▄░█▀▀░█▀█░█░█░█▀▄░█▀█░█░█░█▀█");
         System.out.println("░▀▀█░█▀▀░█░█░█▀▀░▀▀█░░█░░█▀▄░█▀█░█░░░░░█▀▄░█▀▄░█▀▀░█▀█░█▀▄░█░█░█░█░█▄█░█░█");
         System.out.println("░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░░▀░░▀░▀░▀░▀░▀▀▀░░░▀▀░░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀░░▀▀▀░▀░▀░▀░▀");
@@ -44,7 +66,7 @@ public class Game {
         System.out.print("Press Enter to continue...");
         scanner.nextLine();
         
-
+        // Game instructions
         System.out.println("\nWELCOME STUDENT!");
         System.out.println("Survive 30 days of college life!");
         System.out.println("Starting Stats: $300, 100 Energy, 0 Stress, 70% Grade");
@@ -56,12 +78,16 @@ public class Game {
         scanner.nextLine();
     }
 
+    /**
+     * Displays current player statistics and warnings
+     */
     private void printStats() {
+        // Display current stats
         System.out.printf("Money: $%.0f | Energy: %d | Stress: %d | Grade: %d%%\n",
             player.getMoney(), player.getEnergy(), player.getStress(), player.getGrade());
         player.showWeeklyProgress();
         
-        // Grade status
+        // Grade status warnings
         if (player.getGrade() >= 75) {
             System.out.println("GOOD: You are currently PASSING!");
         } else if (player.getGrade() >= 72) {
@@ -79,16 +105,22 @@ public class Game {
             System.out.println("WARNING: High stress level! Consider resting or hanging out.");
         }
         
+        // Energy warnings
         if (player.getEnergy() < 30) {
             System.out.println("WARNING: Low energy! You need rest.");
         }
     }
 
+    /**
+     * Triggers random events based on day progression
+     */
     private void triggerRandomEvent() {
+        // Increasing event chance as semester progresses
         double chance = 0.2;
         if (day >= 15 && day <= 20) chance = 0.3;
         if (day >= 21 && day <= 30) chance = 0.35;
         
+        // Check if event occurs
         if (rng.nextDouble() < chance) {
             Event event = eventPool[rng.nextInt(eventPool.length)];
             System.out.println("\nEVENT: " + event.getName());
@@ -97,7 +129,10 @@ public class Game {
         }
     }
 
-    private void handlePlayerAction() {
+    /**
+     * Handles player action input with validation
+     */
+    private void handlePlayerAction(Scanner scanner) {
         boolean valid = false;
         while (!valid) {
             showActions();
@@ -110,18 +145,26 @@ public class Game {
         }
     }
 
+    /**
+     * Displays available actions to the player
+     */
     private void showActions() {
         System.out.println("\nDAILY ACTIONS:");
         System.out.println("1. Study   (+2% grade, +12 stress, -12 energy, -$50)");
         System.out.println("2. Work    (+$200, +15 stress, -1% grade, -15 energy)");
-        System.out.println("3. Rest    (+ 15 energy, -5 stress , -$30)");
+        System.out.println("3. Rest    (+15 energy, -5 stress, -$30)");
         System.out.println("4. Hang Out (-$80, -5 energy, -10 stress)");
         System.out.print("Choose: ");
     }
 
+    /**
+     * Processes the player's chosen action
+     * @param choice The action choice (1-4)
+     * @return true if action was successful, false otherwise
+     */
     private boolean processAction(int choice) {
         switch (choice) {
-            case 1 -> {
+            case 1 -> { // Study action
                 if (!player.canStudy()) {
                     System.out.println("Study limit reached this week!");
                     return false;
@@ -139,7 +182,7 @@ public class Game {
                 player.incrementStudy();
                 return true;
             }
-            case 2 -> {
+            case 2 -> { // Work action
                 if (!player.canWork()) {
                     System.out.println("Work limit reached this week!");
                     return false;
@@ -152,7 +195,7 @@ public class Game {
                 player.incrementWork();
                 return true;
             }
-            case 3 -> {
+            case 3 -> { // Rest action
                 if (!player.canRest()) {
                     System.out.println("Rest limit reached this week!");
                     return false;
@@ -160,11 +203,11 @@ public class Game {
                 System.out.println("Resting...");
                 player.modifyEnergy(15);
                 player.modifyStress(-5);
-                player.modifyMoney(30);
+                player.modifyMoney(-30);
                 player.incrementRest();
                 return true;
             }
-            case 4 -> {
+            case 4 -> { // Hang out action
                 if (!player.canHangout()) {
                     System.out.println("Hang out limit reached this week!");
                     return false;
@@ -188,8 +231,11 @@ public class Game {
         }
     }
 
+    /**
+     * Applies daily effects based on current stats
+     */
     private void applyDailyEffects() {
-        // SOFTER stress effects
+        // Stress effects on performance
         if (player.getStress() >= 90) {
             player.modifyEnergy(-6); 
             player.modifyGrade(-1); 
@@ -202,16 +248,15 @@ public class Game {
             System.out.println("Stress is draining your energy! Energy -1");
         }
         
-        // Improved energy effects
+        // Energy effects and natural recovery
         if (player.getEnergy() > 85 && player.getStress() > 0) {
             player.modifyStress(-3);
             System.out.println("Well-rested! Stress naturally decreases.");
         }
         if (player.getEnergy() < 15) {
-            player.modifyGrade(-1); // Reduced from -2
+            player.modifyGrade(-1);
             System.out.println("Extreme exhaustion! Grade -1%");
         } else if (player.getEnergy() < 25) {
-            player.modifyGrade(0); // No penalty now
             System.out.println("Exhausted! Focus is difficult.");
         }
         
@@ -223,22 +268,21 @@ public class Game {
         }
     }
 
+    /**
+     * Ensures stats stay within valid ranges
+     */
     private void clampStats() {
         player.setEnergy(Math.min(100, Math.max(0, player.getEnergy())));
         player.setStress(Math.min(100, Math.max(0, player.getStress())));
         player.setGrade(Math.min(95, Math.max(0, player.getGrade())));
     }
 
+    /**
+     * Checks if game over conditions are met
+     * @return true if game should end, false otherwise
+     */
     private boolean isGameOver() {
-        // ONLY check game over at the END of the semester, not during
-        if (day > TOTAL_DAYS) {
-            if (player.getGrade() < 75) {
-                System.out.println("FAILED THE SEMESTER! Final Grade " + player.getGrade() + "% (Required: 75% to pass)");
-                return true;
-            }
-        }
-        
-        // Immediate game over conditions
+        // Check immediate failure conditions
         if (player.getEnergy() <= 0) {
             System.out.println("COLLAPSED FROM EXHAUSTION! Energy <= 0");
             return true;
@@ -251,24 +295,33 @@ public class Game {
             System.out.println("MENTAL BREAKDOWN! Stress >= 100");
             return true;
         }
+        
+        // Only check academic failure at the end of semester
+        if (day > TOTAL_DAYS && player.getGrade() < 75) {
+            System.out.println("FAILED THE SEMESTER! Final Grade " + player.getGrade() + "% (Required: 75% to pass)");
+            return true;
+        }
+        
         return false;
     }
 
+    /**
+     * Displays final game results and score
+     */
     private void showGameResult() {
-        boolean passed = player.getGrade() >= 75;
+        boolean passed = player.getGrade() >= 75 && day > TOTAL_DAYS;
         
-        if (passed && day > TOTAL_DAYS) {
+        if (passed) {
             System.out.println("\n========================================");
             System.out.println("          SEMESTER COMPLETED!");
             System.out.println("========================================");
             System.out.println("SUCCESS! You passed the semester!");
-            
         } else {
             System.out.println("\n========================================");
             System.out.println("             GAME OVER!");
             System.out.println("========================================");
             
-            if (player.getGrade() < 75) {
+            if (player.getGrade() < 75 && day > TOTAL_DAYS) {
                 System.out.println("FAILED: Final Grade " + player.getGrade() + "% (Required: 75% to pass)");
             } else {
                 System.out.println("You didn't meet all requirements.");
@@ -278,6 +331,9 @@ public class Game {
         showFinalStats();
     }
     
+    /**
+     * Displays final statistics and calculates score
+     */
     private void showFinalStats() {
         System.out.printf("\nFINAL STATS:\n");
         System.out.printf("Money: $%.0f\n", player.getMoney());
@@ -285,21 +341,21 @@ public class Game {
         System.out.printf("Stress: %d%%\n", player.getStress());
         System.out.printf("Grade: %d%%\n", player.getGrade());
         
-        // Improved scoring system
+        // Calculate score based on final stats
         int moneyScore = (int)(player.getMoney()) / 10;
-        int energyScore = player.getEnergy() /2;
+        int energyScore = player.getEnergy() / 2;
         int stressScore = Math.max(0, 100 - player.getStress());
         int gradeScore = player.getGrade();
         
-        int score = moneyScore + energyScore + stressScore + gradeScore;
-        System.out.println("Total Score: " + score);
+        int totalScore = moneyScore + energyScore + stressScore + gradeScore;
+        System.out.println("Total Score: " + totalScore);
         
-        // Performance feedback
-        if (score >= 450) {
+        // Performance feedback based on score
+        if (totalScore >= 450) {
             System.out.println("Outstanding performance! Perfect balance!");
-        } else if (score >= 350) {
+        } else if (totalScore >= 350) {
             System.out.println("Great job! Well managed.");
-        } else if (score >= 250) {
+        } else if (totalScore >= 250) {
             System.out.println("Good effort! You passed.");
         } else {
             System.out.println("Try again!");
