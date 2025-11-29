@@ -159,7 +159,7 @@ public class Game {
 
     /**
      * Processes the player's chosen action
-     * @param choice The action choice (1-4)
+     * choice The action choice (1-4)
      * @return true if action was successful, false otherwise
      */
     private boolean processAction(int choice) {
