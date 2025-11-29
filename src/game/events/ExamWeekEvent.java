@@ -1,7 +1,6 @@
 package game.events;
 
 import game.Player;
-
 /**
  * Exam Week Event - Player's performance depends on their energy level
  */
