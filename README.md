@@ -279,19 +279,7 @@ Hanging out...
 Press Enter to continue...
 ```
 
------ Day 5/30 -----
-```
-Money: $400 | Energy: 83 | Stress: 6 | Grade: 71%
-Weekly:| Study 1/4 | Work 1/3 | Rest 1/3 | Hangout 1/3 |
-DANGER: Grade is low! Study more!
 
-DAILY ACTIONS:
-1. Study   (+2% grade, +12 stress, -12 energy, -$50)
-2. Work    (+$200, +15 stress, -1% grade, -15 energy)
-3. Rest    (+ 15 energy, -5 stress , -$30)
-4. Hang Out (-$80, -5 energy, -10 stress)
-Choose:
-```
 
 
 
