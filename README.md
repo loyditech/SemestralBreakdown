@@ -281,8 +281,21 @@ Press Enter to continue...
 
 
 
+## Game Over
+```
+========================================
+             GAME OVER!
+========================================
+FAILED: Final Grade 67% (Required: 75% to pass)
 
-
+FINAL STATS:
+Money: $1240
+Energy: 1%
+Stress: 100%
+Grade: 67%
+Total Score: 191
+Try again!
+```
 
 
 
